@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "j2PEqPiSlRlFeQUMxGdRnnTmbzgG4CAdzCOa0ycvxkE=",
+  "Source": "buy-my-house.api",
+  "BasePath": "_content/buy-my-house.api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

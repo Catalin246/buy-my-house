@@ -1,0 +1,8 @@
+# .NET
+GET http://localhost:5140/WeatherForecast
+GET http://localhost:7071/api/Function1
+
+# Docker
+GET http://localhost:5000/WeatherForecast
+GET http://localhost:5002/api/Function1
+

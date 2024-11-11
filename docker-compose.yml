@@ -9,6 +9,7 @@ services:
       - "5000:5000"  
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://0.0.0.0:5000
     networks:
       - buy-my-house-network
 
@@ -20,6 +21,7 @@ services:
       - "5002:5002"  
     environment:
       - AzureFunctionsJobHost__Logging__Console__IsEnabled=true
+      - ASPNETCORE_URLS=http://0.0.0.0:5002
     networks:
       - buy-my-house-network
 
