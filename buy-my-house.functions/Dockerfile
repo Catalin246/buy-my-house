@@ -3,7 +3,8 @@
 # This stage is used when running from VS in fast mode (Default for Debug configuration)
 FROM mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated8.0 AS base
 WORKDIR /home/site/wwwroot
-EXPOSE 8080
+# Main Functions service port
+EXPOSE 5002
 
 
 # This stage is used to build the service project

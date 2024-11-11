@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  buy-my-house-api:
+    build:
+      context: ./buy-my-house.api  
+      dockerfile: Dockerfile       
+    ports:
+      - "5000:5000"  
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    networks:
+      - buy-my-house-network
+
+  buy-my-house-functions:
+    build:
+      context: ./buy-my-house.functions  
+      dockerfile: Dockerfile             
+    ports:
+      - "5002:5002"  
+    environment:
+      - AzureFunctionsJobHost__Logging__Console__IsEnabled=true
+    networks:
+      - buy-my-house-network
+
+networks:
+  buy-my-house-network:
+    driver: bridge
