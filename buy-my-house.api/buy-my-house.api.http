@@ -1,0 +1,6 @@
+@buy_my_house.api_HostAddress = http://localhost:5140
+
+GET {{buy_my_house.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

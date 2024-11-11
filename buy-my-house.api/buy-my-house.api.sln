@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "buy-my-house.api", "buy-my-house.api.csproj", "{727FCFEF-EAF2-4B72-98CE-A5E8C2CECEDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "buy-my-house.functions", "..\buy-my-house.functions\buy-my-house.functions.csproj", "{A8CE61C5-2530-4546-8FB5-FB37F6AA8E55}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{727FCFEF-EAF2-4B72-98CE-A5E8C2CECEDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{727FCFEF-EAF2-4B72-98CE-A5E8C2CECEDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{727FCFEF-EAF2-4B72-98CE-A5E8C2CECEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{727FCFEF-EAF2-4B72-98CE-A5E8C2CECEDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8CE61C5-2530-4546-8FB5-FB37F6AA8E55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8CE61C5-2530-4546-8FB5-FB37F6AA8E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8CE61C5-2530-4546-8FB5-FB37F6AA8E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8CE61C5-2530-4546-8FB5-FB37F6AA8E55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {620AA7C4-0924-499C-A086-F321DBDC3CB8}
+	EndGlobalSection
+EndGlobal

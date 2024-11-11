@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\avorn\\source\\repos\\buy-my-house.api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A8CE61C5-2530-4546-8FB5-FB37F6AA8E55}|..\\buy-my-house.functions\\buy-my-house.functions.csproj|c:\\users\\avorn\\source\\repos\\buy-my-house.functions\\function1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Function1.cs",
+              "DocumentMoniker": "C:\\Users\\avorn\\source\\repos\\buy-my-house.functions\\Function1.cs",
+              "RelativeDocumentMoniker": "..\\buy-my-house.functions\\Function1.cs",
+              "ToolTip": "C:\\Users\\avorn\\source\\repos\\buy-my-house.functions\\Function1.cs",
+              "RelativeToolTip": "..\\buy-my-house.functions\\Function1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T11:39:08.439Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
