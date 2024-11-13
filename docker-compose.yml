@@ -10,6 +10,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://0.0.0.0:5000
+      - SQL_CONNECTION_STRING=Server=sqlserver,1433;Database=BuyMyHouseDB;User Id=sa;Password=YourPassword123;
+      - AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFeZbP==;BlobEndpoint=http://azurite:10000/devstoreaccount1;TableEndpoint=http://azurite:10002/devstoreaccount1;
     networks:
       - buy-my-house-network
 
@@ -22,9 +24,40 @@ services:
     environment:
       - AzureFunctionsJobHost__Logging__Console__IsEnabled=true
       - ASPNETCORE_URLS=http://0.0.0.0:5002
+      - SQL_CONNECTION_STRING=Server=sqlserver,1433;Database=BuyMyHouseDB;User Id=sa;Password=YourPassword123;
+      - AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFeZbP==;BlobEndpoint=http://azurite:10000/devstoreaccount1;TableEndpoint=http://azurite:10002/devstoreaccount1;
     networks:
       - buy-my-house-network
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourPassword123 
+    ports:
+      - "1433:1433"
+    networks:
+      - buy-my-house-network
+    volumes:
+      - sqlserverdata:/var/opt/mssql
+
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    command: "azurite --loose --blobHost 0.0.0.0 --blobPort 10000 --queueHost 0.0.0.0 --queuePort 10001 --tableHost 0.0.0.0 --tablePort 10002 --location /workspace --debug /workspace/debug.log"
+    ports:
+      - 10000:10000
+      - 10001:10001
+      - 10002:10002
+    networks:
+      - buy-my-house-network
+    volumes:
+      - ./azurite:/workspace
 
 networks:
   buy-my-house-network:
     driver: bridge
+
+volumes:
+  sqlserverdata:
+  azuritedata:
