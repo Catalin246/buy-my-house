@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace BuyMyHouse.Models
 {
@@ -12,6 +13,7 @@ namespace BuyMyHouse.Models
         public string? Location { get; set; } // Address or location of the property
 
         [Required]
+        [Precision(18, 2)]
         public decimal Price { get; set; } // Listing price of the house
 
         [Required]
