@@ -27,7 +27,6 @@ FinancialInformationID (Foreign Key): Links to financial information.
 **FinancialInformation**: Customer financial records.
 
 FinancialInformationID (Primary Key): Unique identifier for each financial record.
-CustomerID (Foreign Key): Links back to the customer.
 Income: Customer’s income.
 CreditScore: Customer’s credit score.
 
