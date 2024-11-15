@@ -18,8 +18,8 @@ namespace BuyMyHouse.DAL
             // Check if the database is already seeded
             if (!_context.Houses.Any())
             {
-                // Use FakeHouseGenerator to create 10 fake houses
-                var fakeHouses = FakeHouseGenerator.GenerateHouses(10);
+                // Use FakeHouseGenerator to create 5 fake houses
+                var fakeHouses = FakeHouseGenerator.GenerateHouses(5);
 
                 // Add data to the database
                 _context.Houses.AddRange(fakeHouses);
