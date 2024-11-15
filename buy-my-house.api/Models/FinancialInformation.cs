@@ -11,9 +11,9 @@ namespace BuyMyHouse.Models
 
         [Required]
         [Precision(18, 2)]
-        public decimal Income { get; set; } // Customer’s income
+        public decimal? Income { get; set; } // Customer’s income
 
         [Required]
-        public int CreditScore { get; set; } // Customer’s credit score
+        public int? CreditScore { get; set; } // Customer’s credit score
     }
 }

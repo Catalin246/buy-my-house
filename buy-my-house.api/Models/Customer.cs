@@ -25,5 +25,15 @@ namespace BuyMyHouse.Models
 
         [ForeignKey("FinancialInformationID")]
         public required FinancialInformation FinancialInformation { get; set; } // Navigation property
+
+        // Constructor to initialize FinancialInformation with null values
+        public Customer()
+        {
+            FinancialInformation = new FinancialInformation
+            {
+                Income = null,
+                CreditScore = null
+            };
+        }
     }
 }
