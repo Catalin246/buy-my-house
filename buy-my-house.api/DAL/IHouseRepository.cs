@@ -7,10 +7,10 @@ namespace BuyMyHouse.DAL
     public interface IHouseRepository
     {
         Task<IEnumerable<House>> GetAllAsync();
-        Task<House?> GetByIdAsync(int id);
-        Task AddAsync(House house);
-        Task UpdateAsync(House house);
-        Task DeleteAsync(int id);
+        // Task<House?> GetByIdAsync(int id);
+        // Task AddAsync(House house);
+        // Task UpdateAsync(House house);
+        // Task DeleteAsync(int id);
     }
 }
 

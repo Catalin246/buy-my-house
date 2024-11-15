@@ -8,10 +8,8 @@ services:
     ports:
       - "5000:5000"  
     environment:
-      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_ENVIRONMENT=Docker
       - ASPNETCORE_URLS=http://0.0.0.0:5000
-      - SQL_CONNECTION_STRING=Server=sqlserver,1433;Database=BuyMyHouseDB;User Id=sa;Password=YourPassword123;
-      - AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFeZbP==;BlobEndpoint=http://azurite:10000/devstoreaccount1;TableEndpoint=http://azurite:10002/devstoreaccount1;
     networks:
       - buy-my-house-network
 
@@ -24,8 +22,6 @@ services:
     environment:
       - AzureFunctionsJobHost__Logging__Console__IsEnabled=true
       - ASPNETCORE_URLS=http://0.0.0.0:5002
-      - SQL_CONNECTION_STRING=Server=sqlserver,1433;Database=BuyMyHouseDB;User Id=sa;Password=YourPassword123;
-      - AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFeZbP==;BlobEndpoint=http://azurite:10000/devstoreaccount1;TableEndpoint=http://azurite:10002/devstoreaccount1;
     networks:
       - buy-my-house-network
 

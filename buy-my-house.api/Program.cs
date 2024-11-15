@@ -3,6 +3,12 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Load environment-specific configuration
+builder.Configuration
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
+    .AddEnvironmentVariables();
+
 // Add services to the container.
 // Add DatabaseContext and configure it to use SQL Server with a connection string
 builder.Services.AddDbContext<DatabaseContext>(options =>
@@ -10,8 +16,6 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
 
 // Register repository interfaces and their implementations for dependency injection
 builder.Services.AddScoped<IHouseRepository, HouseRepository>();
-builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
-builder.Services.AddScoped<IFinancialInformationRepository, FinancialInformationRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

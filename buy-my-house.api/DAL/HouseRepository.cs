@@ -19,31 +19,31 @@ namespace BuyMyHouse.DAL
             return await _context.Houses.ToListAsync();
         }
 
-        public async Task<House?> GetByIdAsync(int id)
-        {
-            return await _context.Houses.FindAsync(id);
-        }
+        // public async Task<House?> GetByIdAsync(int id)
+        // {
+        //     return await _context.Houses.FindAsync(id);
+        // }
 
-        public async Task AddAsync(House house)
-        {
-            await _context.Houses.AddAsync(house);
-            await _context.SaveChangesAsync();
-        }
+        // public async Task AddAsync(House house)
+        // {
+        //     await _context.Houses.AddAsync(house);
+        //     await _context.SaveChangesAsync();
+        // }
 
-        public async Task UpdateAsync(House house)
-        {
-            _context.Houses.Update(house);
-            await _context.SaveChangesAsync();
-        }
+        // public async Task UpdateAsync(House house)
+        // {
+        //     _context.Houses.Update(house);
+        //     await _context.SaveChangesAsync();
+        // }
 
-        public async Task DeleteAsync(int id)
-        {
-            var house = await _context.Houses.FindAsync(id);
-            if (house != null)
-            {
-                _context.Houses.Remove(house);
-                await _context.SaveChangesAsync();
-            }
-        }
+        // public async Task DeleteAsync(int id)
+        // {
+        //     var house = await _context.Houses.FindAsync(id);
+        //     if (house != null)
+        //     {
+        //         _context.Houses.Remove(house);
+        //         await _context.SaveChangesAsync();
+        //     }
+        // }
     }
 }
