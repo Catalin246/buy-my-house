@@ -19,10 +19,13 @@ namespace BuyMyHouse.Controllers
 
         // Get houses in certain price range
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<House>>> GetHouses()
+        public async Task<ActionResult<IEnumerable<House>>> GetHouses([FromQuery] decimal? minPrice, [FromQuery] decimal? maxPrice)
         {
-            return Ok( await _houseRepository.GetAllAsync());
-        }        
+            // Fetch filtered houses from the repository
+            var houses = await _houseRepository.GetHousesInPriceRangeAsync(minPrice, maxPrice);
+            
+            return Ok(houses);
+        }  
 
         // Out of scoupe for this project
         // [HttpGet("{id}")]

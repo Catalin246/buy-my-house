@@ -2,10 +2,10 @@
 @DockerHostAddress =  http://localhost:5000
 
 ### Get All Houses (Docker)
-GET @DockerHostAddress/api/house
+GET @DockerHostAddress/api/house?minPrice=150000&maxPrice=300000
 Accept: application/json
 
 ### Get All Houses (.NET)
-GET @.NETHostAddress/api/house
+GET @.NETHostAddress/api/house?minPrice=150000&maxPrice=300000
 Accept: application/json
 

@@ -14,9 +14,17 @@ namespace BuyMyHouse.DAL
             _context = context;
         }
 
-        public async Task<IEnumerable<House>> GetAllAsync()
+        public async Task<IEnumerable<House>> GetHousesInPriceRangeAsync(decimal? minPrice, decimal? maxPrice)
         {
-            return await _context.Houses.ToListAsync();
+            // Assume minPrice is 0 if not provided
+            minPrice ??= 0;
+
+            // Query the database with the provided filters
+            return await _context.Houses
+                .Where(house =>
+                    house.Price >= minPrice && 
+                    (!maxPrice.HasValue || house.Price <= maxPrice))
+                .ToListAsync();
         }
 
         // public async Task<House?> GetByIdAsync(int id)
