@@ -10,6 +10,8 @@ builder.Configuration
     .AddEnvironmentVariables();
 
 // Add services to the container.
+builder.Services.AddTransient<DatabaseSeeder>();
+
 // Add DatabaseContext and configure it to use SQL Server with a connection string
 builder.Services.AddDbContext<DatabaseContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -23,6 +25,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+// Seed the database
+using (var scope = app.Services.CreateScope())
+{
+    var seeder = scope.ServiceProvider.GetRequiredService<DatabaseSeeder>();
+    seeder.Seed();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

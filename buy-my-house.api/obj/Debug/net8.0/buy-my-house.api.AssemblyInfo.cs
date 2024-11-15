@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("buy-my-house.api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+097fe4d30608a824b2f88d83ef08ff86fecf8e8c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6881277e0e877034409b774de38d17a417545783")]
 [assembly: System.Reflection.AssemblyProductAttribute("buy-my-house.api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("buy-my-house.api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
