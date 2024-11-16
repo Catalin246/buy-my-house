@@ -50,6 +50,17 @@ services:
     volumes:
       - ./azurite:/workspace
 
+  smtp-server:
+    image: namshi/smtp
+    container_name: smtp-server
+    ports:
+      - "1025:25"
+    networks:
+      - buy-my-house-network
+    environment:
+      - RELAY_NETWORKS=*
+    restart: always
+
 networks:
   buy-my-house-network:
     driver: bridge

@@ -45,24 +45,23 @@ Metadata: HouseID for easy retrieval.
 Naming Convention: MortgageOffer_<MortgageOfferID>.pdf
 Metadata:
 CustomerID: Links the document to a customer.
-MortgageApplicationID: Links to the mortgage application.
+ApplicationID: Links to the mortgage application.
 
 ## Azure Table Storage
 Purpose
 Efficient access to mortgage application statuses and offer tracking.
 
 Tables
-**MortgageApplications**: Contains all necessary data related to each mortgage application.
+**Applications**: Contains all necessary data related to each mortgage application.
 
 PartitionKey: CustomerID (Groups all applications by customer).
-RowKey: MortgageApplicationID (Unique identifier for each application).
+RowKey: ApplicationID (Unique identifier for each application).
 Attributes:
 HouseID: ID of the house the mortgage is for.
 ApplicationDate: Date when the application was submitted.
 Status: Current status of the application (e.g., "submitted," "in review," "approved").
 Income: Customer’s income for application reference.
 CreditScore: Customer’s credit score.
-IncomeVerificationStatus: Verification status of income (e.g., "verified," "pending").
 MortgageOfferID: Links to the MortgageOffers table if an offer is generated.
 Timestamp: Date and time of the most recent status update.
 
@@ -79,7 +78,7 @@ DocumentURL: URL to the document stored in Blob Storage.
 Timestamp: Date and time when the offer was created or last updated.
 
 ## Workflow Summary
-1. Application Submission: Customers apply for mortgages on the website. Their information is saved in the MortgageApplications Azure Table Storage with a status of "submitted."
+1. Application Submission: Customers apply for mortgages on the website. Their information is saved in the Applications Azure Table Storage with a status of "submitted."
 2. Batch Processing: At the end of the day, a batch process verifies customer information, assesses applications, and generates mortgage offers.
 3. MortgageOffer Creation:
     A MortgageOfferID is generated, and the document is uploaded to the mortgage-offers container in Blob Storage.
