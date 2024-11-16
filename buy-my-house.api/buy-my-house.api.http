@@ -9,3 +9,23 @@ Accept: application/json
 GET @.NETHostAddress/api/house?minPrice=150000&maxPrice=300000
 Accept: application/json
 
+### Update Customer Financial Information (Docker)
+PUT @DockerHostAddress/api/customer/1/financial-info
+Content-Type: application/json
+Accept: application/json
+
+{
+    "income": 85000.50,
+    "creditScore": 750
+}
+
+### Update Customer Financial Information (.NET)
+PUT @.NETHostAddress/api/customer/1/financial-info
+Content-Type: application/json
+Accept: application/json
+
+{
+    "income": 85000.50,
+    "creditScore": 750
+}
+

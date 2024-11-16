@@ -26,47 +26,5 @@ namespace BuyMyHouse.Controllers
             
             return Ok(houses);
         }  
-
-        // Out of scoupe for this project
-        // [HttpGet("{id}")]
-        // public async Task<ActionResult<House>> GetHouse(int id)
-        // {
-        //     var house = await _houseRepository.GetByIdAsync(id);
-        //     if (house == null)
-        //     {
-        //         return NotFound();
-        //     }
-        //     return Ok(house);
-        // }
-
-        // [HttpPost]
-        // public async Task<ActionResult<House>> CreateHouse(House house)
-        // {
-        //     await _houseRepository.AddAsync(house);
-        //     return CreatedAtAction(nameof(GetHouse), new { id = house.HouseID }, house);
-        // }
-
-        // [HttpPut("{id}")]
-        // public async Task<IActionResult> UpdateHouse(int id, House house)
-        // {
-        //     if (id != house.HouseID)
-        //     {
-        //         return BadRequest();
-        //     }
-        //     await _houseRepository.UpdateAsync(house);
-        //     return NoContent();
-        // }
-
-        // [HttpDelete("{id}")]
-        // public async Task<IActionResult> DeleteHouse(int id)
-        // {
-        //     var house = await _houseRepository.GetByIdAsync(id);
-        //     if (house == null)
-        //     {
-        //         return NotFound();
-        //     }
-        //     await _houseRepository.DeleteAsync(id);
-        //     return NoContent();
-        // }
     }
 }

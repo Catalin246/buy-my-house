@@ -18,6 +18,7 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
 
 // Register repository interfaces and their implementations for dependency injection
 builder.Services.AddScoped<IHouseRepository, HouseRepository>();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
