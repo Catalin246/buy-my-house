@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using BuyMyHouse.Models;
 
 namespace BuyMyHouse.Functions
 {
@@ -89,14 +90,5 @@ namespace BuyMyHouse.Functions
                 return false;
             }
         }
-    }
-
-    public class MortgageApplication
-    {
-        public required string CustomerID { get; set; }
-        public int HouseID { get; set; }
-        public decimal Income { get; set; }
-        public int CreditScore { get; set; }
-        public required string CustomerEmail { get; set; }
     }
 }

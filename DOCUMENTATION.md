@@ -42,10 +42,8 @@ Metadata: HouseID for easy retrieval.
 
 **mortgage-offers**: Stores mortgage offer documents (e.g., PDF).
 
-Naming Convention: MortgageOffer_<MortgageOfferID>.pdf
+Naming Convention: <autogenrated>.pdf
 Metadata:
-CustomerID: Links the document to a customer.
-ApplicationID: Links to the mortgage application.
 
 ## Azure Table Storage
 Purpose
@@ -62,25 +60,18 @@ ApplicationDate: Date when the application was submitted.
 Status: Current status of the application (e.g., "submitted," "in review," "approved").
 Income: Customer’s income for application reference.
 CreditScore: Customer’s credit score.
-MortgageOfferID: Links to the MortgageOffers table if an offer is generated.
+MortgageOfferID: Links to the Offers table if an offer is generated.
 Timestamp: Date and time of the most recent status update.
+CustomerEmail: Customer's email for communication.
+OfferUrl:
 
-**MortgageOffers**: Stores information about each mortgage offer and its status.
+**Offers**: Stores information about each mortgage offer and its status.
 
 PartitionKey: CustomerID (Groups all offers by customer).
 RowKey: MortgageOfferID (Unique identifier for each mortgage offer).
-Attributes:
-ApplicationID: Links back to the related mortgage application.
-OfferDetails: JSON or text field containing key offer information, such as loan amount, interest rate, and repayment terms.
+Attributes: Link to the mortgage offer document.
+CustomerEmial: Customer's email for communication.
 Status: Current status of the offer (e.g., "sent," "viewed," "expired").
 ExpirationDate: Date and time when the offer expires.
-DocumentURL: URL to the document stored in Blob Storage.
+OfferURL: URL to the document stored in Blob Storage.
 Timestamp: Date and time when the offer was created or last updated.
-
-## Workflow Summary
-1. Application Submission: Customers apply for mortgages on the website. Their information is saved in the Applications Azure Table Storage with a status of "submitted."
-2. Batch Processing: At the end of the day, a batch process verifies customer information, assesses applications, and generates mortgage offers.
-3. MortgageOffer Creation:
-    A MortgageOfferID is generated, and the document is uploaded to the mortgage-offers container in Blob Storage.
-    MortgageOffer details are saved in the MortgageOffers Azure Table Storage with a link to the Blob Storage document (DocumentURL).
-4. Email Notification: In the morning, an Azure Function sends a time-limited link to the customer, allowing them to view their MortgageOffer.

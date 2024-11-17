@@ -9,6 +9,7 @@ using Azure.Data.Tables;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
+using BuyMyHouse.Models;
 
 namespace BuyMyHouse.Functions
 {
@@ -148,17 +149,5 @@ namespace BuyMyHouse.Functions
                 return false;
             }
         }
-    }
-
-    public class OfferEntity : ITableEntity
-    {
-        public required string PartitionKey { get; set; }
-        public required string RowKey { get; set; }
-        public ETag ETag { get; set; }
-        public DateTimeOffset? Timestamp { get; set; }
-
-        public required string CustomerEmail { get; set; }
-        public required string OfferUrl { get; set; }
-        public required string Status { get; set; }
     }
 }
