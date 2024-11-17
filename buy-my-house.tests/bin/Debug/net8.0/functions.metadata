@@ -1,0 +1,65 @@
+[
+  {
+    "name": "BatchProcessFunction",
+    "scriptFile": "buy-my-house.functions.dll",
+    "entryPoint": "BuyMyHouse.Functions.BatchProcessFunction.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "timer",
+        "direction": "In",
+        "type": "timerTrigger",
+        "schedule": "0 0 0 * * *",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SendOffersFunction",
+    "scriptFile": "buy-my-house.functions.dll",
+    "entryPoint": "BuyMyHouse.Functions.SendOffersFunction.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "timer",
+        "direction": "In",
+        "type": "timerTrigger",
+        "schedule": "0 0 5 * * *",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SubmitApplicationFunction",
+    "scriptFile": "buy-my-house.functions.dll",
+    "entryPoint": "BuyMyHouse.Functions.SubmitApplicationFunction.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "post"
+        ],
+        "route": "submit-application",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  }
+]
