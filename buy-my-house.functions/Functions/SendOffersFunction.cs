@@ -23,8 +23,8 @@ namespace BuyMyHouse.Functions
 
         [Function("SendOffersFunction")]
         public async Task Run(
-        //[TimerTrigger("0 0 5 * * *")] TimerInfo timer) // Executes at 5 AM daily
-        [HttpTrigger(AuthorizationLevel.Function, "get", Route = "test-send-offers")] HttpRequestData req)
+        [TimerTrigger("0 0 5 * * *")] TimerInfo timer) // Executes at 5 AM daily
+        //[HttpTrigger(AuthorizationLevel.Function, "get", Route = "test-send-offers")] HttpRequestData req) // For testing purpose
         {
             _logger.LogInformation("SendOffersFunction triggered at: {Time}", DateTime.UtcNow);
 

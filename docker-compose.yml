@@ -58,7 +58,8 @@ services:
     networks:
       - buy-my-house-network
     environment:
-      - RELAY_NETWORKS=*
+      - RELAY_NETWORKS=127.0.0.0/8
+      - ALLOWED_SENDER_DOMAINS=*
     restart: always
 
 networks:
