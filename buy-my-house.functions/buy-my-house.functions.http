@@ -1,0 +1,40 @@
+@FunctionsHostAddress = http://localhost:7071
+@DockerHostAddress = http://localhost:5002
+
+### Submit Application (Functions)
+POST @FunctionsHostAddress/api/submit-application
+Content-Type: application/json
+Accept: application/json
+
+{
+    "CustomerID": 1,
+    "HouseID": 1,
+    "Income": 75000,
+    "CreditScore": 720,
+    "CustomerEmail": "testuser@example.com"
+}
+
+### Submit Application (Docker)
+POST @DockerHostAddress/api/submit-application
+Content-Type: application/json
+Accept: application/json
+
+{
+    "CustomerID": 1,
+    "HouseID": 1,
+    "Income": 75000,
+    "CreditScore": 720,
+    "CustomerEmail": "testuser@example.com"
+}
+
+### Batch Process Function (Triggered by Timer)
+# No HTTP endpoint available. This function is executed by a timer trigger.
+
+### Batch Process Function (Docker Timer Trigger)
+# No HTTP endpoint available. This function is executed by a timer trigger in Docker.
+
+### Send Offers Function (Triggered by Timer)
+# No HTTP endpoint available. This function is executed by a timer trigger.
+
+### Send Offers Function (Docker Timer Trigger)
+# No HTTP endpoint available. This function is executed by a timer trigger in Docker.
