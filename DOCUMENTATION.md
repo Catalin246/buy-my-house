@@ -72,6 +72,5 @@ RowKey: MortgageOfferID (Unique identifier for each mortgage offer).
 Attributes: Link to the mortgage offer document.
 CustomerEmial: Customer's email for communication.
 Status: Current status of the offer (e.g., "sent," "viewed," "expired").
-ExpirationDate: Date and time when the offer expires.
 OfferURL: URL to the document stored in Blob Storage.
 Timestamp: Date and time when the offer was created or last updated.
